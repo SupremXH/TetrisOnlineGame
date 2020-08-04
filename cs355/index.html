@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tetris</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		#canvas {
+			display: block;
+			margin: 0px auto;
+			margin-top: 30px;
+			background-color: #d3d3d3;
+			box-shadow: 0px 3px 40px rgba(0,0,0,0.3);
+		}
+
+		input{
+			border: none;
+			width: 150px;
+			height: 60px;
+			position: absolute;
+			right: 300px;
+			top: 350px;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<audio src="win.mp3" autoplay="false"></audio>
+	<input type="button" value="开始游戏" onclick="play();">
+	<script type="text/javascript" src="js/tetris.js"></script>
+</body>
+</html>

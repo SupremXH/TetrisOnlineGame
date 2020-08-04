@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign in - HOTEL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+
+  $(document).ready(function(){
+    $("#signin").click(function(){
+      var username = document.getElementById("user").value.trim();
+      var password = document.getElementById("password").value.trim();
+      $.ajax({
+        url:'https://venus.cs.qc.cuny.edu/~huxi8128/cs355/backend/login/',
+        type:'POST',
+        data:{username:username,password:password},
+        success:function(response){
+          if(response.code == 0){
+            window.location.href="main.html";
+          }
+          else{
+          alert(response.message);
+          }
+        }
+      });
+    });
+  });
+</script>
+</head>
+<body style="background-color:silver">
+<div id="navbar-frame"></div>
+  <section>
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-md-5 col-lg-4">
+          <h1 style="display: block; padding-top: 60px; padding-bottom: 30px;" class="text-center">Sign in</h1>
+          <form>
+            <label class="sr-only" for="input2-signin-02">Username</label>
+            <input class="form-control my-3 bg-light" id="user" type="text" placeholder="Username" required>
+            <label class="sr-only" for="input3-signin-02">Password</label>
+            <input class="form-control my-3 bg-light" id="password" type="password" placeholder="Password" required>
+            <div class="d-flex">
+              <button type="button" class="btn btn-primary btn-block py-2 mr-3" name="signin" id="signin">Sign in</button>
+              <button type="button" class="btn btn-outline-secondary btn-block py-2 mr-3" id="reset" type="reset" style="margin-top: 0px;">Reset</button>
+            </div>
+            <button type="button" class="btn btn-link btn-block" onclick="window.location.href ='register.html'">Don't have an account? Sign up here</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

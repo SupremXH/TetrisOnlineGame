@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8" content="width=device-width">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+  </head>
+  <style>
+  body {
+    background-image: url('img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+  }
+  #canvas {
+    display: inline-block;
+    margin: 0px auto;
+    margin-top: 10px;
+    margin-left:30px;
+  }
+  input{
+    border: inline;
+    margin-top: 22px;
+    margin-left:20px;
+    display: inline;
+
+  }
+  .btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+  </style>
+  <body>
+    <div id="navbar-frame"></div>
+    <div class="row">
+    <div>
+      <audio src="win.mp3" autoplay="false"></audio>
+    <div class="btn-group-vertical">
+      <input type="button" class="btn btn-secondary" id="START" value="START" onclick="play();">
+      <input type="button" class="btn btn-secondary" id="PASTE" value="PASTE" onclick="paste();">
+      <input type="button" class="btn btn-secondary" id="reset" value="RESET" onclick="reset();">
+      <input type="button" class="btn btn-secondary" id="save" value="SAVE" onclick="save();">
+      <input type="button" class="btn btn-secondary" id="reload" value="RELOAD" onclick="reload();">
+    </div>
+  </div>
+  <div>
+  <canvas id="canvas"></canvas>
+</div>
+</div>
+  	<script type="text/javascript" src="js/tetris.js"></script>
+  </body>
+</html>
